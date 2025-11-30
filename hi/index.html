@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="lang-switcher">
+    <a href="/" class="lang-en active">English</a> • 
+    <a href="/hi/" class="lang-hi">हिंदी</a> • 
+    <a href="/ta/" class="lang-ta">தமிழ்</a>
+    </div>
     <header>
         <div class="hero">
             <h1>मैथिली उपक्रमः</h1>
@@ -47,5 +52,15 @@
     <footer>
         <p>यह वेबसाइट ग्रामीण 2G पर भी 0.8 सेकंड में खुलती है — अपने लोगों के लिए ❤️</p>
     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    const links = document.querySelectorAll('.lang-switcher a');
+    links.forEach(link => link.classList.remove('active'));
+    if (path === '/') document.querySelector('.lang-en').classList.add('active');
+    else if (path === '/hi/') document.querySelector('.lang-hi').classList.add('active');
+    else if (path === '/ta/') document.querySelector('.lang-ta').classList.add('active');
+    });
+    </script>
 </body>
 </html>
