@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mythili Initiative – ஸநாதந தர்மம் & டிஜிட்டல் ஆத்மநிர்பரதா</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;600&family=Siddhanta&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="lang-switcher">
+    <a href="/" class="lang-en active">English</a> • 
+    <a href="/hi/" class="lang-hi">हिंदी</a> • 
+    <a href="/ta/" class="lang-ta">தமிழ்</a>
+    </div>
     <header>
         <div class="hero">
             <h1>மைதிலி முன்னெடுப்பு</h1>
@@ -45,5 +50,15 @@
     <footer>
         <p>இந்த தளம் கிராம 2G இணைப்பிலும் 0.8 வினாடிகளில் திறக்கிறது — ஊர் மக்களுக்காகவே ❤️</p>
     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    const links = document.querySelectorAll('.lang-switcher a');
+    links.forEach(link => link.classList.remove('active'));
+    if (path === '/') document.querySelector('.lang-en').classList.add('active');
+    else if (path === '/hi/') document.querySelector('.lang-hi').classList.add('active');
+    else if (path === '/ta/') document.querySelector('.lang-ta').classList.add('active');
+    });
+    </script>    
 </body>
 </html>
